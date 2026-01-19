@@ -139,7 +139,7 @@ const PreviewWireframe = ({ layout }) => {
     );
 };
 
-const Step1Layout = () => {
+const Step3Layout = () => {
     const navigate = useNavigate();
     const { layouts, selectedLayout, setSelectedLayout, loading, error } = useBuilder();
 
@@ -154,7 +154,7 @@ const Step1Layout = () => {
     };
 
     const handleBack = () => {
-        navigate('/');
+        navigate('/questions');
     };
 
     if (loading) {
@@ -184,7 +184,7 @@ const Step1Layout = () => {
             <div className="layout-main">
                 <div className="layout-header">
                     <h1 className="page-title-large">Choose Your Layout</h1>
-                    <p className="step-subtitle">Step 1 of 4: Layout Selection</p>
+                    <p className="step-subtitle">Step 3 of 6: Layout Selection</p>
                 </div>
 
                 <div className="layout-cards-row">
@@ -227,8 +227,8 @@ const Step1Layout = () => {
                 </div>
 
                 <div className="progress-dots-v2">
-                    {[1, 2, 3, 4].map((dot) => (
-                        <div key={dot} className={`dot ${dot === 1 ? 'active' : ''}`} />
+                    {[1, 2, 3, 4, 5, 6].map((dot) => (
+                        <div key={dot} className={`dot ${dot === 3 ? 'active' : dot < 3 ? 'completed' : ''}`} />
                     ))}
                 </div>
             </div>
@@ -240,4 +240,4 @@ const Step1Layout = () => {
     );
 };
 
-export default Step1Layout;
+export default Step3Layout;

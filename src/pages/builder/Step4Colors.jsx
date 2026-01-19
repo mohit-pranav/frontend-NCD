@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useBuilder } from '../../context/BuilderContext';
 
-const Step2Colors = () => {
+const Step4Colors = () => {
     const navigate = useNavigate();
     const { colorPalettes, selectedPalette, setSelectedPalette, selectedLayout, loading, error } = useBuilder();
 
@@ -53,7 +53,7 @@ const Step2Colors = () => {
                         </svg>
                     </button>
                     <h1 className="page-title">Choose Your Vibe</h1>
-                    <span className="step-badge">Step 2 of 4</span>
+                    <span className="step-badge">Step 4 of 6</span>
                 </div>
 
                 <div className="palette-scroll-container">
@@ -85,10 +85,10 @@ const Step2Colors = () => {
                         Continue
                     </button>
                     <div className="progress-dots-v2">
-                        {[1, 2, 3, 4].map((dot) => (
+                        {[1, 2, 3, 4, 5, 6].map((dot) => (
                             <div
                                 key={dot}
-                                className={`dot ${dot === 2 ? 'active' : ''} ${dot < 2 ? 'completed' : ''}`}
+                                className={`dot ${dot === 4 ? 'active' : ''} ${dot < 4 ? 'completed' : ''}`}
                             />
                         ))}
                     </div>
@@ -174,4 +174,4 @@ const Step2Colors = () => {
     );
 };
 
-export default Step2Colors;
+export default Step4Colors;

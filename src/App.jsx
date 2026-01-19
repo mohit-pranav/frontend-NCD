@@ -9,11 +9,12 @@ import HomePage from './pages/HomePage';
 import TemplatesPage from './pages/TemplatesPage';
 import ComponentsPage from './pages/ComponentsPage';
 
-// Builder Steps (after homepage prompt)
-import Step1Layout from './pages/builder/Step1Layout';
-import Step2Colors from './pages/builder/Step2Colors';
-import Step3Animations from './pages/builder/Step3Animations';
-import Step4Preview from './pages/builder/Step4Preview';
+// Builder Steps (6 steps: Prompt → Questions → Layout → Colors → Animations → Preview)
+import Step2Questions from './pages/builder/Step2Questions';
+import Step3Layout from './pages/builder/Step3Layout';
+import Step4Colors from './pages/builder/Step4Colors';
+import Step5Animations from './pages/builder/Step5Animations';
+import Step6Preview from './pages/builder/Step6Preview';
 
 import './index.css';
 import './styles/builder.css';
@@ -30,14 +31,15 @@ function App() {
 
                 {/* Routes */}
                 <Routes>
-                    {/* Homepage with Header - user enters prompt here */}
+                    {/* Homepage with Header - Step 1: User enters prompt here */}
                     <Route path="/" element={<><Header /><HomePage /></>} />
 
-                    {/* Builder Flow - 4 Steps after prompt */}
-                    <Route path="/layout" element={<Step1Layout />} />
-                    <Route path="/colors" element={<Step2Colors />} />
-                    <Route path="/animations" element={<Step3Animations />} />
-                    <Route path="/preview" element={<Step4Preview />} />
+                    {/* Builder Flow - 6 Steps */}
+                    <Route path="/questions" element={<Step2Questions />} />
+                    <Route path="/layout" element={<Step3Layout />} />
+                    <Route path="/colors" element={<Step4Colors />} />
+                    <Route path="/animations" element={<Step5Animations />} />
+                    <Route path="/preview" element={<Step6Preview />} />
 
                     {/* Other Pages */}
                     <Route path="/templates" element={<><Header /><TemplatesPage /></>} />
@@ -49,3 +51,5 @@ function App() {
 }
 
 export default App;
+
+

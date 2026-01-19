@@ -36,7 +36,7 @@ const Step1Prompt = () => {
         setTimeout(() => {
             setIsLoading(false);
             nextStep();
-            navigate('/layout');
+            navigate('/questions');
         }, 1500);
     };
 
@@ -131,7 +131,7 @@ const Step1Prompt = () => {
 
             {/* Progress Dots */}
             <div className="progress-dots">
-                {[1, 2, 3, 4, 5].map((dot) => (
+                {[1, 2, 3, 4, 5, 6].map((dot) => (
                     <div
                         key={dot}
                         className={`progress-dot ${dot === 1 ? 'active' : ''}`}
